@@ -17,7 +17,12 @@ Politique de mot de passe fort:
 - avertissement 7 jours avant la limite pour changer le mot de passe
 - min. 10 char dont 1 maj, 1 min, 1 chiffre et pas plus de 3 rep consécutives d'un même char. Ne doit pas être ou contenir le nom d'utilisateur.
 
-Installation et configuration stricte de sudo.
+Installation et configuration stricte de sudo:
+- 3 essais max pour s'identifier en sudo
+- mettre un message d'erreur en cas de mauvais mot de passe sudo
+- archiver chaque utilisation de sudo (input et output), dans /var/log/sudo/
+- mode TTY activé
+- restreindre les paths utilisables par sudo
 
 Un utilisateur en plus de l'utilisateur root; il appartient aux groupes sudo et users42.
 
