@@ -44,18 +44,18 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 - nombre de commandes effectuées avec sudo
 
 # Notions importantes
-Virtualbox = logiciel pour créer des machines virtuelles
-Debian = une des OS pour linux
-SElinux = Security Enhanced Linux
-Apparmor = 
-LVM = 
-service SSH =
-pare-feu UFW = 
-hostname =
-sudo = sorte de compte administrateur? en gros pour forcer une commande on utilise sudo
-mode TTY = 
-utilisateur root = 
-kernel = 
-adresse IPv4 = 
-adresse MAC = 
+- Virtualbox = logiciel pour créer des machines virtuelles
+- Debian = une des OS pour linux
+- SElinux = Security Enhanced Linux
+- Apparmor =
+- LVM =
+- service SSH =
+- pare-feu UFW =
+- hostname =
+- sudo = sorte de compte administrateur? en gros pour forcer une commande on utilise sudo
+- mode TTY =
+- utilisateur root =
+- kernel =
+- adresse IPv4 =
+- adresse MAC = 
 
