@@ -16,7 +16,9 @@ Politique de mot de passe fort:
 - min. 2 jours entre chaque changement de mots de passe
 - avertissement 7 jours avant la limite pour changer le mot de passe
 - min. 10 char dont 1 maj, 1 min, 1 chiffre et pas plus de 3 rep consécutives d'un même char. Ne doit pas être ou contenir le nom d'utilisateur.
-Installation et configuration stricte de sudo
-Un utilisateur en plus de l'utilisateur root; il appartient à sudo et users42.
+
+Installation et configuration stricte de sudo.
+
+Un utilisateur en plus de l'utilisateur root; il appartient aux groupes sudo et users42.
 
 Attention, une fois tout configuré, il faudra changer tous les mots de passe.
