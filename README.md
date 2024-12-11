@@ -3,6 +3,7 @@ Projet du 2ème cercle du cursus 42
 # Consignes:
 **Mettre en place un serveur en suivant des règles spécifiques.**
 
+## Partie obligatoire
 Utiliser VirtualBox, avec Debian comme OS. SElinux et Apparmor doivent rester actifs.
 
 Deux partitions chiffrées doivent être créées avec LVM. Un service SSH doit être actif sur le port 4242 (qui doit être le seul port ouvert); l'utilisateur root ne doit pas pouvoir se connecter via SSH.
@@ -27,3 +28,17 @@ Installation et configuration stricte de sudo:
 Un utilisateur en plus de l'utilisateur root; il appartient aux groupes sudo et users42.
 
 Attention, une fois tout configuré, il faudra changer tous les mots de passe.
+
+Un bash script écrira les infos suivantes toutes les 10 min sur tous les terminaux, sans aucune erreur visible:
+- architecture de l'OS + sa version kernel
+- nombre de processeurs physiques
+- nombre de processeurs virtuels
+- mémoire vive dispo et % d'utilisation
+- mémoire dispo et % d'utilisation
+- % d'utilisation des processeurs
+- date et heure du dernier redémarrage
+- statut de LVM (actif ou pas)
+- nombre de connexions actives
+- nombre d'utilisateurs
+- adresse IPv4 et adresse MAC
+- nombre de commandes effectuées avec sudo
