@@ -10,7 +10,7 @@ Deux partitions chiffrées doivent être créées avec LVM. Un service SSH doit 
 
 L'OS doit être configurée avec le pare-feu UFW.
 
-Le hostname = cyglardo42.
+Le hostname = your_login42.
 
 Politique de mot de passe fort: 
 - mot de passe expire tous les 30 jours: au moins 7 nouveaux char comparé à l'ancien, sauf pour l'utilisateur root.
@@ -42,3 +42,20 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 - nombre d'utilisateurs
 - adresse IPv4 et adresse MAC
 - nombre de commandes effectuées avec sudo
+
+# Notions importantes
+Virtualbox = logiciel pour créer des machines virtuelles
+Debian = une des OS pour linux
+SElinux = Security Enhanced Linux
+Apparmor = 
+LVM = 
+service SSH =
+pare-feu UFW = 
+hostname =
+sudo = sorte de compte administrateur? en gros pour forcer une commande on utilise sudo
+mode TTY = 
+utilisateur root = 
+kernel = 
+adresse IPv4 = 
+adresse MAC = 
+
