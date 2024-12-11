@@ -1,1 +1,2 @@
 Ce fichier contiendra la signature du disque virtuel de votre machine (cf. Rendu et peer-evaluation pour plus d’informations).
+Blablabla 
