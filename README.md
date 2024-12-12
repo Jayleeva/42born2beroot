@@ -48,6 +48,7 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 - Debian = une des OS pour linux
 - SElinux = Security Enhanced Linux
 - Apparmor =
+- partition chiffrée = 
 - LVM =
 - service SSH =
 - pare-feu UFW =
