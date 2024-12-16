@@ -49,7 +49,7 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 - SElinux = Security Enhanced Linux
 - Apparmor =
 - partition chiffrée = 
-- LVM =
+- LVM (Logical Volumes Manager) = sert à gérer les volumes logiques.
 - service SSH =
 - pare-feu UFW =
 - hostname =
