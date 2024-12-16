@@ -51,7 +51,7 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 - partition chiffrée = 
 - LVM (Logical Volumes Manager) = sert à gérer les volumes logiques.
 - service SSH =
-- pare-feu UFW =
+- pare-feu UFW (Uncomplicated FireWall) = 
 - hostname =
 - sudo = sorte de compte administrateur? en gros pour forcer une commande on utilise sudo
 - mode TTY =
