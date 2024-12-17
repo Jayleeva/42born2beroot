@@ -123,6 +123,8 @@ ATTENTION, ne se met pas à jour chez l'utilisateur. Il faut entrer les commande
 
 - ``sudo chage -W 7 <username/root>`` change le warning avant le changement de mot de passe, pour l'utilisateur nommé.
 
+``chage -l username`` : affiche la politique de l'utilisateur nommé.
+
 ## Groupes
 ``sudo groupadd user42`` : crée le groupe user42.
 
