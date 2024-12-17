@@ -172,8 +172,12 @@ PUIS
 
 ``cmd3=$(df --block-size=G --total | grep total | awk '{ print $5 }')`` : va chercher l'espace disponible sur le disque (colonne 5 = pourcentage).
 
-
-``cmd=$(mpstat | grep all | awk '{print $3+$5}')`` : va chercher la charge des CPU? (additionne colonne 3 et 5?)
+```
+cmd1=$(df --block-size=G --total | grep total | awk '{ print $3 }')
+cmd2=$(df --block-size=G --total | grep total | awk '{ print $2 }')
+``cmd=$(mpstat | grep all | awk '{print $3+$5}')
+```
+: va chercher la charge des CPU? 
 
 ``cmd=$(who -b | awk '{ print $3 " " $4 }')`` : va chercher les infos sur les utilisateurs actuellement connectés en précisant l'heure du dernier system boot (?)
 
