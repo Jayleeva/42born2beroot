@@ -116,7 +116,7 @@ ET / OU?
 
 ``sudo vim /etc/login.defs`` : ouvre le fichier login.defs, où on peut changer la politique de changement de mots de passe. Trouver ``PASS_MAX_DAYS 9999 PASS_MIN_DAYS 0 PASS_WARN_AGE 7`` et changer en ``PASS_MAX_DAYS 30 PASS_MIN_DAYS 2 PASS_WARN_AGE 7`` (doit changer tous les 30 jours, peut pas être changé avant 2 jours, utilisateur prévenu 7 jours avant le changement).
 
-ATTENTION, ne se met pas à jour chez l'utilisateur. Il faut entrer les commandes:
+ATTENTION, ne se met pas à jour chez les utilisateurs qui étaient déjà créées. Il faut entrer les commandes:
 - ``sudo chage -M 30 <username/root>`` change le max de jours avant le changement de mot de passe, pour l'utilisateur nommé.
 
 - ``sudo chage -m 2 <username/root>`` change le min de jours avant le changement de mot de passe, pour l'utilisateur nommé.
