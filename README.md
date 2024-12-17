@@ -87,3 +87,17 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 
 ``sudo vim /etc/ssh/sshd_config`` : ouvre le fichier sshd_config, où on peut changer le port.
 
+``sudo grep Port /etc/ssh/sshd_config`` : affiche le port (vérifier si bien changé).
+
+``sudo service ssh restart`` : redémarre le service ssh.
+
+``apt-get install ufw`` : installe le pare-feu UFW.
+
+``sudo ufw enable`` : enclenche le pare-feu.
+
+``sudo ufw allow ssh`` : écrit une nouvelle règle qui autorise ssh dans le pare-feu?
+
+``sudo ufw allow 4242``: écrit une nouvelle règle qui autorise le port 4242 dans le pare-feu?
+
+``sudo ufw status numbered`` : affiche le statut du pare-feu, avec les éléments autorisés.
+
