@@ -103,3 +103,7 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 
 ``ssh <username>@127.0.0.1 -p 4242`` : permet de se connecter à la machine virtuelle depuis un terminal de l'hôte.
 
+``sudo apt-get install libpam-pwquality`` : installe la librairie pour instaurer une politique de mots de passe?
+
+``sudo vim /etc/pam.d/common-password`` : ouvre le fichier common-password, où on peut changer la politique de mots de passe.
+
