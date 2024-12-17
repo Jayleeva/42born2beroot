@@ -175,7 +175,7 @@ PUIS
 ```
 cmd1=$(df --block-size=G --total | grep total | awk '{ print $3 }')
 cmd2=$(df --block-size=G --total | grep total | awk '{ print $2 }')
-``cmd=$(mpstat | grep all | awk '{print $3+$5}')
+cmd=$(mpstat | grep all | awk '{print $3+$5}')
 ```
 : va chercher la charge des CPU? 
 
