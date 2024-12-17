@@ -101,3 +101,5 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 
 ``sudo systemctl status ssh`` : affiche le statut du service ssh.
 
+``ssh <username>@127.0.0.1 -p 4242`` : permet de se connecter à la machine virtuelle depuis un terminal de l'hôte.
+
