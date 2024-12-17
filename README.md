@@ -136,5 +136,7 @@ ATTENTION, ne se met pas à jour chez l'utilisateur. Il faut entrer les commande
 
 ``sudo usermod -aG user42 your_username`` : ajoute l'utilisateur nommé dans le groupe nommé (ici user42).
 
+## Cron
+cron (chrono tab -> "table de planification") est un programme qui permet aux utilisateurs des systèmes Unix d’exécuter automatiquement des scripts, des commandes ou des logiciels à une date et une heure spécifiée à l’avance, ou selon un cycle défini à l’avance.
 
 */10 * * * * /usr/local/bin/monitoring.sh
