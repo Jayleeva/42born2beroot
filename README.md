@@ -113,7 +113,20 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 
 ``sudo vim /etc/login.defs`` : ouvre le fichier login.defs, où on peut changer la politique de changement de mots de passe. Trouver ``PASS_MAX_DAYS 9999 PASS_MIN_DAYS 0 PASS_WARN_AGE 7`` et changer en ``PASS_MAX_DAYS 30 PASS_MIN_DAYS 2 PASS_WARN_AGE 7`` (doit changer tous les 30 jours, peut pas être changé avant 2 jours, utilisateur prévenu 7 jours avant le changement).
 
+ATTENTION, ne se met pas à jour chez l'utilisateur. Il faut entrer les commandes:
+- ``sudo chage -M 30 <username/root>`` change le max de jours avant le changement de mot de passe, pour l'utilisateur nommé.
+
+- ``sudo chage -m 2 <username/root>`` change le min de jours avant le changement de mot de passe, pour l'utilisateur nommé.
+
+- ``sudo chage -W 7 <username/root>`` change le warning avant le changement de mot de passe, pour l'utilisateur nommé.
+
 ## Groupes
 ``sudo groupadd user42`` : crée le groupe user42.
 
 ``getent group`` : affiche les groupes existants.
+
+``cut -d: -f1 /etc/passwd`` : affiche les utilisateurs locaux.
+
+``sudo adduser new_username`` : crée un utilisateur.
+
+``sudo usermod -aG user42 your_username`` : ajoute l'utilisateur nommé dans le groupe nommé (ici user42).
