@@ -1,2 +1,1 @@
-Ce fichier contiendra la signature du disque virtuel de votre machine (cf. Rendu et peer-evaluation pour plus d’informations).
-Blablabla 
+96a8c25c84efb86d273f829282d05e961e796586
