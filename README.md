@@ -65,5 +65,25 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 
 ``su -`` : permet de se log en tant que superutilisateur (root)
 
-``apt-get update -y`` et ``apt-get upgrade -y`` : permettent de vérifier et mettre à jour (?) 
+``apt-get update -y`` et ``apt-get upgrade -y`` : permettent de vérifier et mettre à jour (?)
+
+``apt install sudo`` : installe sudo
+
+``usermod -aG sudo your_username`` : ajoute l'utilisateur dans le groupe sudo.
+
+``getent group sudo`` : affiche les membres du groupe sudo.
+
+``sudo visudo`` : ouvre le fichier sudoers (privilèges des membres du groupe?) lire man pour sudoers file. Enregistrer avec ctrl + o et quitter avec ctrl + x.
+
+``apt-get install git -y`` : installe git
+
+``git --version`` : affiche la version git
+
+``sudo apt install openssh-server`` : installe le service ssh
+
+``sudo systemctl status ssh`` : affiche le statut du service ssh
+
+``apt install vim`` : installe vim
+
+``sudo vim /etc/ssh/sshd_config`` : ouvre le fichier sshd_config, où on peut changer le port.
 
