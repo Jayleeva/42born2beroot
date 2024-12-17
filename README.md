@@ -61,5 +61,6 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 - adresse MAC =
 
 # Commandes importantes
-``lsblk`` : affiches les partitions
+``lsblk`` : affiche les partitions
+``su -`` : permet de se log en tant que superutilisateur (root)
 
