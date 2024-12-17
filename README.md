@@ -81,8 +81,6 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 
 ``sudo apt install openssh-server`` : installe le service ssh
 
-``sudo systemctl status ssh`` : affiche le statut du service ssh
-
 ``apt install vim`` : installe vim
 
 ``sudo vim /etc/ssh/sshd_config`` : ouvre le fichier sshd_config, où on peut changer le port.
@@ -100,4 +98,6 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 ``sudo ufw allow 4242``: écrit une nouvelle règle qui autorise le port 4242 dans le pare-feu?
 
 ``sudo ufw status numbered`` : affiche le statut du pare-feu, avec les éléments autorisés.
+
+``sudo systemctl status ssh`` : affiche le statut du service ssh.
 
