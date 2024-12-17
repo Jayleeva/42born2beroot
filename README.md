@@ -168,3 +168,19 @@ PUIS
 
 ``cmd3=$(df --block-size=G --total | grep total | awk '{ print $5 }')`` : va chercher l'espace disponible sur le disque (colonne 5 = pourcentage).
 
+
+``cmd=$(mpstat | grep all | awk '{print $3+$5}')`` : va chercher la charge des CPU? (additionne colonne 3 et 5?)
+
+``cmd=$(who -b | awk '{ print $3 " " $4 }')`` : va chercher les infos sur les utilisateurs actuellement connectés en précisant l'heure du dernier system boot (?)
+
+``cmd=$(cat /etc/fstab | grep /dev/mapper | wc -l)`` : va chercher l'utilisation du LVM.
+
+``cmd=$(echo "$(ss -t state established | wc -l) - 1" | bc)`` : va chercher et compte toutes les lignes où une connexion TCP a été établie (?)
+
+``cmd=$(who | wc -l)`` : va chercher et compte les utilisateurs actuellement connectés.
+
+```cmd1=$(ip addr | grep enp | grep inet | awk '{print $2}' | cut -d / -f1)
+cmd2=$(ip addr | grep ether | awk '{print $2}')``` : va chercher l'adresse IP et MAC.
+
+``cmd=$(journalctl -q | grep COMMAND | wc -l)`` : va chercher et compte le nombre de commandes sudo dans le journal en supprimant toutes les infos superflues (messages et avertissements).
+
