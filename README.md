@@ -181,6 +181,12 @@ cmd=$(mpstat | grep all | awk '{print $3+$5}')
 
 ``cmd=$(who -b | awk '{ print $3 " " $4 }')`` : va chercher les infos sur les utilisateurs actuellement connectés en précisant l'heure du dernier system boot (?)
 
+```
+if [ $cmd -gt 0 ]
+then
+```
+: permet d'afficher oui ou non selon si LVM est utilisé ou pas (?)
+
 ``cmd=$(cat /etc/fstab | grep /dev/mapper | wc -l)`` : va chercher l'utilisation du LVM.
 
 ``cmd=$(echo "$(ss -t state established | wc -l) - 1" | bc)`` : va chercher et compte toutes les lignes où une connexion TCP a été établie (?)
