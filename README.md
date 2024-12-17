@@ -183,7 +183,7 @@ PUIS
 cmd1=$(ip addr | grep enp | grep inet | awk '{print $2}' | cut -d / -f1)
 cmd2=$(ip addr | grep ether | awk '{print $2}')
 ```
-: va chercher l'adresse IP et MAC.
+: va chercher l'adresse IP (mot-clé "enp" et "inet", colonne 2, jusqu'au délimitateur /, 1er bloc) et MAC (mot-clé "ether", colonne 2).
 
 ``cmd=$(journalctl -q | grep COMMAND | wc -l)`` : va chercher et compte le nombre de commandes sudo dans le journal en supprimant toutes les infos superflues (messages et avertissements).
 
