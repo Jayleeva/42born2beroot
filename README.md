@@ -67,6 +67,7 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 
 ``apt-get update -y`` et ``apt-get upgrade -y`` : permettent de vérifier et mettre à jour (?)
 
+## Sudo
 ``apt install sudo`` : installe sudo
 
 ``usermod -aG sudo your_username`` : ajoute l'utilisateur dans le groupe sudo.
@@ -75,10 +76,12 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 
 ``sudo visudo`` : ouvre le fichier sudoers (privilèges des membres du groupe?) lire man pour sudoers file. Enregistrer avec ctrl + o et quitter avec ctrl + x.
 
+## Git
 ``apt-get install git -y`` : installe git
 
 ``git --version`` : affiche la version git
 
+## Service SSH et UFW
 ``sudo apt install openssh-server`` : installe le service ssh
 
 ``apt install vim`` : installe vim
@@ -103,6 +106,7 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 
 ``ssh <username>@127.0.0.1 -p 4242`` : permet de se connecter à la machine virtuelle depuis un terminal de l'hôte.
 
+## Politique de mots de passe
 ``sudo apt-get install libpam-pwquality`` : installe la librairie pour instaurer une politique de mots de passe?
 
 ``sudo vim /etc/pam.d/common-password`` : ouvre le fichier common-password, où on peut changer la politique de mots de passe. A la ligne pam_pwquality.so, après ``retry=3``, ajouter ``minlen=10 ucredit=-1 lcredit=-1 dcredit=-1 maxrepeat=3 reject_username difok=7 enforce_for_root`` (min. 10 char, dont au moins 1 uppercase 1 lowercase et 1 digit, 3 mêmes char à suivre max, au moins 7 char différents de l'ancien mot de passe quand changement, sauf pour root?).
