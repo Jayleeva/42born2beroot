@@ -135,3 +135,6 @@ ATTENTION, ne se met pas à jour chez l'utilisateur. Il faut entrer les commande
 ``sudo adduser new_username`` : crée un utilisateur.
 
 ``sudo usermod -aG user42 your_username`` : ajoute l'utilisateur nommé dans le groupe nommé (ici user42).
+
+
+*/10 * * * * /usr/local/bin/monitoring.sh
