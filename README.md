@@ -134,6 +134,8 @@ ATTENTION, ne se met pas à jour chez les utilisateurs qui étaient déjà cré�
 
 ``sudo adduser new_username`` : crée un utilisateur.
 
+``sudo userdel -r username`` : supprimer un utilisateur et tout ce qui lui est lié.
+
 ``sudo usermod -aG user42 your_username`` : ajoute l'utilisateur nommé dans le groupe nommé (ici user42).
 
 ## Cron
