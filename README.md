@@ -58,5 +58,8 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 - utilisateur root =
 - kernel =
 - adresse IPv4 =
-- adresse MAC = 
+- adresse MAC =
+
+# Commandes importantes
+``lsblk`` : affiches les partitions
 
