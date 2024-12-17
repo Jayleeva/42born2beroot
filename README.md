@@ -151,5 +151,20 @@ changer hostname avec commande ``sudo hostnamectl set-hostname your_username42``
 
 PUIS
 
-``nano /etc/hosts`` changer hostname
+``nano /etc/hosts`` changer hostname.
+
+## bash
+``cmd=$(grep "physical id" /proc/cpuinfo | uniq | wc -l)`` : va chercher et compte toutes les lignes uniques qui contiennent "physical id". Permet de compter le nombre de CPU physiques.
+
+``cmd=$(grep "^processor" /proc/cpuinfo | wc -l)`` : va chercher et compte toutes les lignes qui commencent par ^processor. Permet de compter le nombre de vCPU.
+
+
+``cmd1=$(free --mega -t | grep Total | awk '{ print $3 }')`` : va chercher l'espace mémoire total en megabytes de la colonne 3 (utilisé) de la ligne contenant "Total".
+
+``cmd2=$(free --mega -t | grep Total | awk '{ print $2 }')`` idem mais colonne 2 (total).
+
+``cmd3=$(free --mega -t | grep Total | awk '{ print $3/$2 * 100 }')`` : calcule le pourcentage utilisé.
+
+
+``cmd3=$(df --block-size=G --total | grep total | awk '{ print $5 }')`` : va chercher l'espace disponible sur le disque (colonne 5 = pourcentage).
 
