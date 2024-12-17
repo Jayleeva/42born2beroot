@@ -179,8 +179,10 @@ PUIS
 
 ``cmd=$(who | wc -l)`` : va chercher et compte les utilisateurs actuellement connectés.
 
-```cmd1=$(ip addr | grep enp | grep inet | awk '{print $2}' | cut -d / -f1)
-cmd2=$(ip addr | grep ether | awk '{print $2}')``` : va chercher l'adresse IP et MAC.
+```
+cmd1=$(ip addr | grep enp | grep inet | awk '{print $2}' | cut -d / -f1)
+cmd2=$(ip addr | grep ether | awk '{print $2}')
+``` : va chercher l'adresse IP et MAC.
 
 ``cmd=$(journalctl -q | grep COMMAND | wc -l)`` : va chercher et compte le nombre de commandes sudo dans le journal en supprimant toutes les infos superflues (messages et avertissements).
 
