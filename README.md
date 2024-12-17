@@ -154,6 +154,10 @@ PUIS
 ``nano /etc/hosts`` changer hostname.
 
 ## bash
+``#! /bin/bash`` : déclare le fichier comme un bash.
+
+``cmd=$(uname -a)`` : va chercher tous les noms unix : architecture, machine, ..., ..., OS, ...,...
+
 ``cmd=$(grep "physical id" /proc/cpuinfo | uniq | wc -l)`` : va chercher et compte toutes les lignes uniques qui contiennent "physical id". Permet de compter le nombre de CPU physiques.
 
 ``cmd=$(grep "^processor" /proc/cpuinfo | wc -l)`` : va chercher et compte toutes les lignes qui commencent par ^processor. Permet de compter le nombre de vCPU.
