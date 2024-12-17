@@ -140,3 +140,12 @@ ATTENTION, ne se met pas à jour chez l'utilisateur. Il faut entrer les commande
 cron (chrono tab -> "table de planification") est un programme qui permet aux utilisateurs des systèmes Unix d’exécuter automatiquement des scripts, des commandes ou des logiciels à une date et une heure spécifiée à l’avance, ou selon un cycle défini à l’avance.
 
 */10 * * * * /usr/local/bin/monitoring.sh
+
+
+## hostname
+changer hostname avec commande ``sudo hostnamectl set-hostname your_username42``
+
+PUIS
+
+``nano /etc/hosts`` changer hostname
+
