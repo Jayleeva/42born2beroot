@@ -62,5 +62,8 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 
 # Commandes importantes
 ``lsblk`` : affiche les partitions
+
 ``su -`` : permet de se log en tant que superutilisateur (root)
+
+``apt-get update -y`` et ``apt-get upgrade -y`` : permettent de vérifier et mettre à jour (?) 
 
