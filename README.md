@@ -76,11 +76,6 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 
 ``sudo visudo`` : ouvre le fichier sudoers (privilèges des membres du groupe?) lire man pour sudoers file. Enregistrer avec ctrl + o et quitter avec ctrl + x.
 
-## Git
-``apt-get install git -y`` : installe git
-
-``git --version`` : affiche la version git
-
 ## Service SSH et UFW
 ``sudo apt install openssh-server`` : installe le service ssh
 
