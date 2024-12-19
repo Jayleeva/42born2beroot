@@ -45,10 +45,10 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 
 # Notions importantes
 - Virtualbox = logiciel pour créer des machines virtuelles
-- Debian = une des OS pour linux
+- Debian = une des OS pour linux.
 - SElinux = Security Enhanced Linux
 - Apparmor = gère les privilèges des groupes, est actif par défaut.
-- partition chiffrée = 
+- partition chiffrée = séparation du disque pour stocker les choses à des endroits séparés + encryption. 
 - LVM (Logical Volumes Manager) = sert à gérer les volumes logiques.
 - service SSH = service d'identification et de transfert sécurisé des données (encryption).
 - pare-feu UFW (Uncomplicated FireWall) = service en plus du SSH qui vérifie que la connexion aux ports est autorisée. 
@@ -56,9 +56,8 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 - sudo = utilisé pour forcer des commandes autrement pas autorisées. Configurable
 - mode TTY = sert à vérifier qu'on est dans un terminal. Utilisé dans le fichier sudoers avec ``requiretty`` : toutes les commandes sudo ne peuvent se faire que dans un terminal. 
 - utilisateur root = 
-- kernel =
 - adresse IPv4 =
-- adresse MAC =
+- adresse MAC (Mandatory Adress Control) = 
 
 # Commandes importantes
 ``lsblk`` : affiche les partitions
