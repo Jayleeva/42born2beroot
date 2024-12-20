@@ -209,7 +209,7 @@ Ordinateur alloue des ressources (mémoire, processeurs, ...) pour créer et ali
 ### Pourquoi Linux
 Contrairement à Windows et Mac, Linux est open source et permet plus de manipulations.
 ### Différences basiques Rocky et Debian
-Debian plus simple pour les débutants, Rocky offre plus de possibilités mais est plus compliqué à prendre en main. Debian est très stable, a une grande communauté et donc une documentation fournie. Sur Rocky, on utilise SElinux, et sur Debian, APParmor.
+Debian plus simple pour les débutants, Rocky offre plus de possibilités mais est plus compliqué à prendre en main, il est préféré par les entreprises. Debian est très stable, a une grande communauté et donc une documentation fournie. Sur Rocky, on utilise SElinux, et sur Debian, APParmor.
 ### Intérêt des VM
 Environnement séparé de l'ordi de base, permet de tester des choses, si la VM casse, on la supprime et notre ordi est sauf. Aussi, comme 2 (voire plus) ordis en un, économies d'argent et d'énergie. Peut permettre de tester une autre OS sans racheter un nouvel ordi.
 ### Différence aptitude et apt
@@ -261,9 +261,9 @@ Taper ``hostname``.
 ## Afficher les partitions, expliquer fonctionnement et intérêt
 Taper ``lsblk``.
 
-Chaque ``sda`` est une partition: un espace de mémoire réservé pour un truc précis. Le 'a' de 'sda' indique que la partition est dans le disque 'a'; s'il y avait un 'sdb' en plus par ex, cela voudrait dire qu'il y aurait 2 disques. ``sda5_crypt`` est une version chiffrée (encryptée) de ``sda5``. LVM (logic volume manager) permet de faire des sous-partitions en divisant les partitions en volumes logiques.
+Chaque ``sda`` est une partition: un espace de mémoire réservé pour un truc précis. Le 'a' de 'sda' indique que la partition est dans le disque 'a'; s'il y avait un 'sdb' en plus par ex, cela voudrait dire qu'il y aurait 2 disques. ``sda5_crypt`` est une version chiffrée (encryptée) de ``sda5``. LVM (logical volume manager) permet de faire des sous-partitions en divisant les partitions en volumes logiques.
 
-L'intérêt est qu'on évite les débordements: je m'assure que le système de base ait tout l'espace dont il a besoin pour fonctionner peu importe combien de jeux j'installe sur mon ordi par ex, mais aussi, je peux mettre un truc potentiellement dangereux dans une partition ou un volume spécifique et il n'influera pas sur le reste.
+L'intérêt est qu'on évite les débordements: je m'assure que le système de base ait tout l'espace dont il a besoin pour fonctionner peu importe combien de jeux j'installe sur mon ordi par ex, mais aussi, je peux mettre un truc potentiellement dangereux dans une partition ou un volume spécifique et il n'influera pas sur le reste. LVM donne aussi plus de flexibilité pour organiser ma mémoire.
 
 ## Sudo bien installé?
 Vu qu'on l'a déjà utilisé plusieurs fois, oui. Mais si vraiment, taper ``dpkg -l | grep sudo``. 
@@ -307,9 +307,4 @@ Pare-feu, limite strictement quel port peut lancer ou recevoir des informations.
 Taper ``sudo nano /usr/local/bin/monitoring.sh``
 
 ## Script se lance toutes les 10 min
-Taper ``crontab -e``
-
-
-
-
-
+Taper ``crontab -e`` pour voir la ligne qui lance le script toutes les 10 min: ``*/10 * * * * /usr/local/bin/monitoring.sh``
