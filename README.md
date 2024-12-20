@@ -198,19 +198,26 @@ cmd2=$(ip addr | grep ether | awk '{print $2}')
 
 # Evaluation
 Faire une copie / snapshot de la machine.
+Lancer la machine, mettre la passphrase, se connecter. Montrer le mot de passe pour vérifier qu'il remplisse bien les critères.
 
 ## Signature
 Sur un terminal non connecté à la machine virtuelle, taper ``shasum machine_path.vdi``, copier le résultat dans un fichier test enregistré au même endroit que la signature mise sur git, faire la commande ``diff test.txt signature.txt`` . Si retourne rien, OK.
 
 ## Questions générales
 ### Fonctionnement machine
-Ordinateur alloue des ressources (mémoire, processeurs, ...) pour créer et alimenter un nouvel ordinateur.
+Ordinateur alloue des ressources (mémoire, processeurs, ...) pour créer et alimenter un nouvel ordinateur à l'intérieur de lui-même.
 ### Pourquoi Linux
 Contrairement à Windows et Mac, Linux est open source et permet plus de manipulations.
 ### Différences basiques Rocky et Debian
 Debian plus simple pour les débutants, Rocky offre plus de possibilités mais est plus compliqué à prendre en main. Debian est très stable, a une grande communauté et donc une documentation fournie. Sur Rocky, on utilise SElinux, et sur Debian, APParmor.
 ### Intérêt des VM
+Environnement séparé de l'ordi de base, permet de tester des choses, si la VM casse, on la supprime et notre ordi est sauf. Aussi, comme 2 (voire plus) ordis en un, économies d'argent et d'énergie. Peut permettre de tester une autre OS sans racheter un nouvel ordi.
+### Différence aptitude et apt
+Aptitude va deviner des choses et prendre des initiatives: moins de prise de tête, mais aussi moins de contrôle. Apt fait strictement ce qu'on lui demande de faire et rien d'autre.
+### APParmor c'est quoi
+Gestionnaire des privilèges des groupes, limite et surveille qui utilise quelle appli de quelle manière. Est actif par défaut sur Debian.
 
+## 
 
 
 
