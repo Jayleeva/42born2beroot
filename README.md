@@ -47,7 +47,7 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 - Virtualbox = logiciel pour créer des machines virtuelles
 - Debian = une des OS pour linux.
 - SElinux = Security Enhanced Linux
-- Apparmor = gère les privilèges des groupes, est actif par défaut.
+- Apparmor = gère les privilèges des groupes pour limiter les accès aux applications, est actif par défaut.
 - partition chiffrée = séparation du disque pour stocker les choses à des endroits séparés + encryption. 
 - LVM (Logical Volumes Manager) = sert à gérer les volumes logiques.
 - service SSH = service d'identification et de transfert sécurisé des données (encryption).
@@ -55,16 +55,16 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 - hostname = your_login42. 
 - sudo = utilisé pour forcer des commandes autrement pas autorisées. Configurable
 - mode TTY = sert à vérifier qu'on est dans un terminal. Utilisé dans le fichier sudoers avec ``requiretty`` : toutes les commandes sudo ne peuvent se faire que dans un terminal. 
-- utilisateur root = 
-- adresse IPv4 =
-- adresse MAC (Mandatory Adress Control) = 
+- utilisateur root = administrateur
+- adresse IPv4 = permet de localiser la machine.
+- adresse MAC (Mandatory Adress Control) = utilisé par APParmor pour identifier qui fait quoi avec quel appli.
 
 # Commandes importantes
 ``lsblk`` : affiche les partitions
 
 ``su -`` : permet de se log en tant que superutilisateur (root)
 
-``apt-get update -y`` et ``apt-get upgrade -y`` : permettent de vérifier et mettre à jour (?)
+``apt-get update -y`` et ``apt-get upgrade -y`` : permettent de vérifier et mettre à jour les paquets de Debian?
 
 ## Sudo
 ``apt install sudo`` : installe sudo
@@ -194,4 +194,24 @@ cmd2=$(ip addr | grep ether | awk '{print $2}')
 : va chercher l'adresse IP (mot-clé "enp" et "inet", colonne 2, jusqu'au délimitateur /, 1er bloc) et MAC (mot-clé "ether", colonne 2).
 
 ``cmd=$(journalctl -q | grep COMMAND | wc -l)`` : va chercher et compte le nombre de commandes sudo dans le journal en supprimant toutes les infos superflues (messages et avertissements).
+
+
+# Evaluation
+Faire une copie / snapshot de la machine.
+
+## Signature
+Sur un terminal non connecté à la machine virtuelle, taper ``shasum machine_path.vdi``, copier le résultat dans un fichier test enregistré au même endroit que la signature mise sur git, faire la commande ``diff test.txt signature.txt`` . Si retourne rien, OK.
+
+## Questions générales
+### Fonctionnement machine
+Ordinateur alloue des ressources (mémoire, processeurs, ...) pour créer et alimenter un nouvel ordinateur.
+### Pourquoi Linux
+Contrairement à Windows et Mac, Linux est open source et permet plus de manipulations.
+### Différences basiques Rocky et Debian
+Debian plus simple pour les débutants, Rocky offre plus de possibilités mais est plus compliqué à prendre en main. Debian est très stable, a une grande communauté et donc une documentation fournie. Sur Rocky, on utilise SElinux, et sur Debian, APParmor.
+### Intérêt des VM
+
+
+
+
 
