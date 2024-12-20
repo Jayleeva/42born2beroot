@@ -307,4 +307,5 @@ Pare-feu, limite strictement quel port peut lancer ou recevoir des informations.
 Taper ``sudo nano /usr/local/bin/monitoring.sh``
 
 ## Script se lance toutes les 10 min
-Taper ``crontab -e`` pour voir la ligne qui lance le script toutes les 10 min: ``*/10 * * * * /usr/local/bin/monitoring.sh``
+Taper ``sudo crontab -e`` pour voir la ligne qui lance le script toutes les 10 min: ``*/10 * * * * /usr/local/bin/monitoring.sh``
+cron (chrono tab -> "table de planification") est un programme qui permet aux utilisateurs des systèmes Unix d’exécuter automatiquement des scripts, des commandes ou des logiciels à une date et une heure spécifiée à l’avance, ou selon un cycle défini à l’avance.
