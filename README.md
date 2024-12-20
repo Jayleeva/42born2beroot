@@ -287,6 +287,8 @@ Ouvrir le fichier /etc/sudoers.tmp avec ``sudo visduo``. Regarder les Defaults: 
 - Taper ``cat /var/log/sudo/sudo.log``
 - Quitter, lancer une commande sudo (ex. ``sudo ufw status ``), refaire la commande précédente, comparer.
 
+  ``sudo sudoreplay -l`` TSID0000...
+
 ## UFW installé et fonctionne? bien une règle 4242?
 - Taper ``dpkg -l | grep ufw``
 - Taper ``sudo ufw status``.
