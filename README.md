@@ -303,6 +303,9 @@ Pare-feu, limite strictement quel port peut lancer ou recevoir des informations.
 - Ouvrir un nouveau terminal pas dans la machine, taper ``ssh root@localhost -p 4242`` , doit constamment dire que le mot de passe est faux.
 - Dans ce nouveau terminal, taper ``ssh evaluator@localhost -p 4242``, doit pouvoir se connecter avec le mot de passe choisi à la création du compte.
 
+## Expliquer script
+Taper ``sudo nano /usr/local/bin/monitoring.sh``
+
 ## Script se lance toutes les 10 min
 Taper ``crontab -e``
 
