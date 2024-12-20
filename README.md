@@ -218,11 +218,11 @@ Aptitude va deviner des choses et prendre des initiatives: moins de prise de tê
 Gestionnaire des privilèges des groupes, limite et surveille qui utilise quelle appli de quelle manière. Est actif par défaut sur Debian.
 
 ## Bien sur Debian?
-C'est écrit partout au lancement.
+C'est écrit partout au lancement, mais si vraiment: ``uname -a``.
 ## UFW lancé?
 Taper ``sudo ufw status``
 ## SSH lancé?
-Taper ``sudo systemctl status ssh``
+Taper ``sudo systemctl status ssh``.
 
 ## Utilisateur autre que root bien dans sudo et user42?
 Taper ``groups``.
