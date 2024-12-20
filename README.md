@@ -306,6 +306,7 @@ Pare-feu, limite strictement quel port peut lancer ou recevoir des informations.
 
 ## Expliquer script
 Taper ``sudo nano /usr/local/bin/monitoring.sh``
+Stimuler le CPUl pour voir des chiffres au lieu du 0.0% : ``sha1sum /dev/zero``
 
 ## Script se lance toutes les 10 min
 Taper ``sudo crontab -e`` pour voir la ligne qui lance le script toutes les 10 min: ``*/10 * * * * /usr/local/bin/monitoring.sh``
