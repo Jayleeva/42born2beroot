@@ -206,7 +206,8 @@ Sur un terminal non connecté à la machine virtuelle, taper ``shasum machine_pa
 
 ## Questions générales
 ### Fonctionnement machine
-Ordinateur alloue des ressources (mémoire, processeurs, ...) pour créer et alimenter un nouvel ordinateur à l'intérieur de lui-même.
+Ordinateur alloue des ressources (mémoire, processeurs, ...) pour créer et alimenter un nouvel ordinateur à l'intérieur de lui-même. L'hyperviseur s'assure que les deux (ou plus) environnements soient séparés.
+
 ### Pourquoi Linux
 Contrairement à Windows et Mac, Linux est open source et permet plus de manipulations.
 ### Différences basiques Rocky et Debian
