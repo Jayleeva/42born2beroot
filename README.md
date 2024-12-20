@@ -297,7 +297,15 @@ Pare-feu, limite strictement quel port peut lancer ou recevoir des informations.
 - Taper ``sudo ufw status numbered``.
 - Taper ``sudo ufw delete 8080num``.
 
-## SSH installé et fonctionne?
+## SSH installé et fonctionne? que le port 4242? root ne peut pas se connecter? nouvel utilisateur oui?
+- Taper ``dpkg -l | grep ssh`` ou ``sudo systemctl status ssh``
+- Regarder dans visualbox settings network advances port...
+- Ouvrir un nouveau terminal pas dans la machine, taper ``ssh root@localhost -p 4242`` , doit constamment dire que le mot de passe est faux.
+- Dans ce nouveau terminal, taper ``ssh evaluator@localhost -p 4242``, doit pouvoir se connecter avec le mot de passe choisi à la création du compte.
+
+## Script se lance toutes les 10 min
+Taper ``crontab -e``
+
 
 
 
