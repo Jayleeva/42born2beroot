@@ -58,7 +58,8 @@ Un bash script écrira les infos suivantes toutes les 10 min sur tous les termin
 - utilisateur root = administrateur
 - adresse IPv4 = permet de localiser la machine.
 - adresse MAC (Mandatory Adress Control) = utilisé par APParmor pour identifier qui fait quoi avec quel appli.
-
+- cron (chrono tab -> "table de planification") = programme qui permet aux utilisateurs des systèmes Unix d’exécuter automatiquement des scripts, des commandes ou des logiciels à une date et une heure spécifiée à l’avance, ou selon un cycle défini à l’avance.
+  
 # Commandes importantes
 ``lsblk`` : affiche les partitions
 
@@ -300,7 +301,7 @@ Pare-feu, limite strictement quel port peut lancer ou recevoir des informations.
 ## SSH installé et fonctionne? que le port 4242? root ne peut pas se connecter? nouvel utilisateur oui?
 - Taper ``dpkg -l | grep ssh`` ou ``sudo systemctl status ssh``
 - Regarder dans visualbox settings network advances port...
-- Ouvrir un nouveau terminal pas dans la machine, taper ``ssh root@localhost -p 4242`` , doit constamment dire que le mot de passe est faux.
+- Ouvrir un nouveau terminal pas dans la machine, taper ``ssh root@localhost -p 4242`` , doit constamment dire que le mot de passe est faux et arrêter après 3 essais.
 - Dans ce nouveau terminal, taper ``ssh evaluator@localhost -p 4242``, doit pouvoir se connecter avec le mot de passe choisi à la création du compte.
 
 ## Expliquer script
