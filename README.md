@@ -236,7 +236,7 @@ J'ai du installer une librairie avec ``apt-get install libpam-pwquality``.
 
 ## Créer nouveau user, vérifier
 - Taper ``sudo adduser evaluator``
-- Entrer un mot de passe qui ne respecte pas la pol pour voir, puis qui respecte la pol et dont on se souvient facilement, ex: 123qwerty_TEST.
+- Entrer un mot de passe qui ne respecte pas la pol pour voir, puis qui respecte la pol et dont on se souvient facilement, ex: 123qwerty_TEST. Parfois accepte un mot de passe qui ne respecte pas tout, mais empêchera la connexion au ssh ensuite. Pour modifier le mot de passe: ``sudo password username``.
 - Réentrer le mot de passe
 - entrer blank blank blank etc puis oui.
 - Taper ``cut -d: -f1 /etc/passwd`` pour vérifier.
