@@ -132,6 +132,8 @@ Normalement, Visualbox est déjà installé sur les Mac de l'école, mais n'est 
 
 ``ssh <username>@127.0.0.1 -p 4242`` : permet de se connecter à la machine virtuelle depuis un terminal de l'hôte.
 
+Depuis VirtualBox, cliquer sur votre machine > settings > network > ports redirection > add new rule, mettre "4242" dans le port hôte et le port invité.
+
 ## Politique de mots de passe
 ``sudo apt-get install libpam-pwquality`` : installe la librairie pour instaurer une politique de mots de passe.
 
