@@ -70,7 +70,7 @@ Normalement, Visualbox est déjà installé sur les Mac de l'école, mais n'est 
 5. En fonction de votre version, cliquer sur votre machine > settings > storage > optical drive et donner le path de l'image.
 
 # Installation
-1. A l'aide des flèches du clavier, choisir l'option "install". ATTENTION: cela ne suffit pas pour répondre au critère "pas d'interface graphique" selon certains évaluateurs. Pour les satisfaire, ne pas oublier la manipulation :[].
+1. A l'aide des flèches du clavier, choisir l'option "install". **ATTENTION: cela ne suffit pas pour répondre au critère "pas d'interface graphique" selon certains évaluateurs.** Pour les satisfaire, ne pas oublier la manipulation :[].
 2. Choisir la langue.
 3. Choisir le pays.
 4. Choisir le clavier.
