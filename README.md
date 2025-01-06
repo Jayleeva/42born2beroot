@@ -252,7 +252,7 @@ Gestionnaire des privilèges des groupes, limite et surveille qui utilise quelle
 
 ## Pas d'interface graphique?
 1. La machine consiste simplement en un terminal.
-2. Pour les pinailleurs: taper `` `` , si `` `` s'affiche, ok.
+2. Pour les pinailleurs: taper ``ls /usr/bin/*session`` , si ``usr/bin/dbus-run-session `` s'affiche, ok.
 
 ## Bien sur Debian?
 C'est écrit partout au lancement, mais si vraiment: ``uname -a``.
