@@ -296,7 +296,7 @@ Taper ``lsblk``.
 
 Chaque ``sda`` est une partition: un espace de mémoire réservé pour un truc précis. Le 'a' de 'sda' indique que la partition est dans le disque 'a'; s'il y avait un 'sdb' en plus par ex, cela voudrait dire qu'il y aurait 2 disques. ``sda5_crypt`` est une version chiffrée (encryptée) de ``sda5``. LVM (logical volume manager) permet de faire des sous-partitions en divisant les partitions en volumes logiques.
 
-L'intérêt est qu'on évite les débordements: je m'assure que le système de base ait tout l'espace dont il a besoin pour fonctionner peu importe combien de jeux j'installe sur mon ordi par ex, mais aussi, je peux mettre un truc potentiellement dangereux dans une partition ou un volume spécifique et il n'influera pas sur le reste. LVM donne aussi plus de flexibilité pour organiser ma mémoire.
+L'intérêt est qu'on évite les débordements: je m'assure que le système de base ait tout l'espace dont il a besoin pour fonctionner peu importe combien de jeux j'installe sur mon ordi par ex, mais aussi, je peux mettre un truc potentiellement dangereux dans une partition ou un volume spécifique et il n'influera pas sur le reste. LVM donne aussi plus de flexibilité pour organiser ma mémoire, en allant au-delà de la simple séparation des disques.
 
 ## Sudo bien installé?
 Vu qu'on l'a déjà utilisé plusieurs fois, oui. Mais si vraiment, taper ``dpkg -l | grep sudo``. 
