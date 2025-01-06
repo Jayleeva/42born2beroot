@@ -250,6 +250,10 @@ Aptitude va deviner des choses et prendre des initiatives: moins de prise de tê
 ### APParmor c'est quoi
 Gestionnaire des privilèges des groupes, limite et surveille qui utilise quelle appli de quelle manière. Est actif par défaut sur Debian.
 
+## Pas d'interface graphique?
+1. La machine consiste simplement en un terminal.
+2. Pour les pinailleurs: taper `` `` , si `` `` s'affiche, ok.
+
 ## Bien sur Debian?
 C'est écrit partout au lancement, mais si vraiment: ``uname -a``.
 ## UFW lancé?
