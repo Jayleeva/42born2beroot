@@ -70,7 +70,7 @@ Normalement, Visualbox est déjà installé sur les Mac de l'école, mais n'est 
 5. En fonction de votre version, cliquer sur votre machine > settings > storage > optical drive et donner le path de l'image.
 
 # Installation
-1. A l'aide des flèches du clavier, choisir l'option "install".
+1. A l'aide des flèches du clavier, choisir l'option "install". ATTENTION: cela ne suffit pas pour répondre au critère "pas d'interface graphique" selon certains évaluateurs. Pour les satisfaire, ne pas oublier la manipulation :[].
 2. Choisir la langue.
 3. Choisir le pays.
 4. Choisir le clavier.
@@ -88,7 +88,7 @@ Normalement, Visualbox est déjà installé sur les Mac de l'école, mais n'est 
 16. A la question "Amount of volume group to use for guided partitionning", entrer "max".
 17. Si vous aviez décider de fouiller au lieu de prendre l'option vite et simple, c'est ici que vous allez devoir créer vos partitions. Une fois fini, choisir "Finish partitionning and write changes to disk", confirmer.
 18. No > Enter (nous n'avons pas d'autre disque à scanner).
-19. Choisir un mirroir : prendre le pays le plus proche du sien.
+19. Choisir un miroir : prendre le pays le plus proche du sien.
 20. Choisir deb.debian.org
 21. Enter (pas besoin de proxy).
 22. No > Enter (nous ne voulons pas participer au sondage).
