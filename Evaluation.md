@@ -16,7 +16,7 @@ Debian plus simple pour les débutants, Rocky offre plus de possibilités mais e
 ### Intérêt des VM
 Environnement séparé de l'ordi de base, permet de tester des choses, si la VM casse, on la supprime et notre ordi est sauf. Aussi, comme 2 (voire plus) ordis en un, économies d'argent et d'énergie. Peut permettre de tester une autre OS sans racheter un nouvel ordi.
 ### Différence aptitude et apt
-Aptitude va deviner des choses et prendre des initiatives: moins de prise de tête, mais aussi moins de contrôle. Apt fait strictement ce qu'on lui demande de faire et rien d'autre.
+Aptitude a une interface graphique et va prendre des initiatives: moins de prise de tête, mais aussi moins de contrôle. Apt n'as pas d'interface graphique et fait strictement ce qu'on lui demande de faire et rien d'autre.
 ### APParmor c'est quoi
 Gestionnaire des privilèges des groupes, limite et surveille qui utilise quelle appli de quelle manière. Est actif par défaut sur Debian.
 
