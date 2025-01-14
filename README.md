@@ -217,6 +217,7 @@ PUIS
 ``mac=$(ip link show | grep "ether" | awk '\{print $2\}')\`` : va chercher les infos sur l'adresse IP, la ligne contenant "ether" et imprime la colonne 2, soit l'adresse MAC.
 
 ``cmds=$(journalctl _COMM=sudo | grep COMMAND | wc -l)\`` : va chercher et compte le nombre de commandes sudo dans le journal en supprimant toutes les infos superflues (messages et avertissements).
+
 ``
 wall "	#Architecture: $arc\
 	#CPU physical: $pcpu\
@@ -230,6 +231,5 @@ wall "	#Architecture: $arc\
 	#User log: $ulog\
 	#Network: IP $ip ($mac)\
 	#Sudo: $cmds cmd"\
-}
 `` 
 wall permet de faire afficher le message sur tous les terminaux connectes a la machine. La suite est de la mise en page.
