@@ -218,7 +218,7 @@ PUIS
 
 ``cmds=$(journalctl _COMM=sudo | grep COMMAND | wc -l)\`` : va chercher et compte le nombre de commandes sudo dans le journal en supprimant toutes les infos superflues (messages et avertissements).
 
-``
+````
 wall "	#Architecture: $arc\
 	#CPU physical: $pcpu\
 	#vCPU: $vcpu\
@@ -231,5 +231,5 @@ wall "	#Architecture: $arc\
 	#User log: $ulog\
 	#Network: IP $ip ($mac)\
 	#Sudo: $cmds cmd"\
-`` 
+````
 wall permet de faire afficher le message sur tous les terminaux connectes a la machine. La suite est de la mise en page.
