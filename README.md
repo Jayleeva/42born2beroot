@@ -184,13 +184,51 @@ PUIS
 ## bash
 ``#! /bin/bash`` : déclare le fichier comme un bash.
 
-``cmd=$(uname -a)`` : va chercher tous les noms unix : architecture, machine, ..., ..., OS, ...,...
+``arc=$(uname -a)`` : va chercher tous les noms unix : architecture, machine, ..., ..., OS, ...,...
 
-``cmd=$(grep "physical id" /proc/cpuinfo | uniq | wc -l)`` : va chercher et compte toutes les lignes uniques qui contiennent "physical id". Permet de compter le nombre de CPU physiques.
+``pcpu=$(grep "physical id" /proc/cpuinfo | uniq | wc -l)`` : va chercher et compte toutes les lignes uniques qui contiennent "physical id" dans le fichier cpuinfo. Permet de compter le nombre de CPU physiques.
 
-``cmd=$(grep "^processor" /proc/cpuinfo | wc -l)`` : va chercher et compte toutes les lignes qui commencent par ^processor. Permet de compter le nombre de vCPU.
+``vcpu=$(grep "^processor" /proc/cpuinfo | wc -l)`` : va chercher et compte toutes les lignes qui commencent par ^processor dans le fichier cpuinfo. Permet de compter le nombre de vCPU.
 
+``fram=$(free -m | awk '$1 == "Mem:" \{print $2\}')\`` : va chercher dans les informations sur la memoire, si la colonne 1 s'appelle "Mem:", imprime le contenu de la colonne 2, soit l'espace ram encore libre.
 
+``uram=$(free -m | awk '$1 == "Mem:" \{print $3\}')\`` : va chercher dans les informations sur la memoire, si la colonne 1 s'appelle "Mem:", imprime le contenu de la colonne 3, soit l'espace ram utilise.
+
+``pram=$(free | awk '$1 == "Mem:" \{printf("%.2f"), $3/$2*100\}')\`` : va chercher dans les informations sur la memoire, si la colonne 1 s'appelle "Mem:", imprime en format float avec 2 decimales le resultat du calcul du pourcentage [utilise sur libre (?)].
+
+``fdisk=$(df -BG | grep '^/dev/' | grep -v '/boot$' | awk '\{ft += $2\} END \{print ft\}')\`` : va chercher dans les informations sur le disque (affichees en blocs avec l'unite giga), les lignes qui commencent par /dev et qui ne contiennent pas /boot$, cumule toutes les colonnes 2, et a la fin de ce calcul, en imprime le resultat, soit l'espace disque libre. Il n'y a en realite qu'une seule colonne 2, mais le calcul est laisse car il permet d'eviter des erreurs d'affichage.
+
+``udisk=$(df -BM | grep '^/dev/' | grep -v '/boot$' | awk '\{ut += $3\} END \{print ut\}')\`` : va chercher dans les informations sur le disque (affichees en blocs avec l'unite mega), les lignes qui commencent par /dev et qui ne contiennent pas /boot$, cumule toutes les colonnes 3, et a la fin de ce calcul, en imprime le resultat, soit l'espace disque utilise. Il n'y a en realite qu'une seule colonne 3, mais le calcul est laisse car il permet d'eviter des erreurs d'affichage.
+
+``pdisk=$(df -BM | grep '^/dev/' | grep -v '/boot$' | awk '\{ut += $3\} \{ft+= $2\} END \{printf("%d"), ut/ft*100\}')\`` : va chercher dans les informations sur le disque (affichees en blocs avec l'unite mega), les lignes qui commencent par /dev et qui ne contiennent pas /boot$, cumule toutes les colonnes 3 et toutes les colonnes 2 (separement) et calcule le pourcentage [utilise sur libre (?)]. 
+
+``cpul=$(top -bn1 | grep '^%Cpu' | awk '\{printf("%.1f%%"), $1 + $3\}')\`` : va chercher dans le gestionnaire de taches la ligne qui commence par %Cpu et imprime en format float avec 1 decimale le resultat de l'addition de la colonne 1 et 3 (systeme et utilisateur).
+
+``lb=$(who -b | awk '$1 == "system" \{print $3 " " $4\}')\`` : va chercher les infos sur les utilisateurs actuellement connectés en précisant l'heure du dernier system boot. La colonne 3 correspond a la date et la colonne 4 a l'heure.
+
+``lvmu=$(if [ $(lsblk | grep "lvm" | wc -l) -eq 0 ]; then echo no; else echo yes; fi)\`` : va chercher les infos sur les partitions, les lignes contenant "lvm" et les compte, si le resultat est 0 (= LVM n'est pas active), ecrit non; sinon ecrit oui; fin de la condition.
+
+``ctcp=$(ss -Ht state established | wc -l)\`` : 
+``ulog=$(users | wc -w)\`` : va chercher les utilisateurs actuellement connectés et compte le nombre de mots (noms).
+``ip=$(hostname -I)\`` : va chercher l'adresse IP.
+``mac=$(ip link show | grep "ether" | awk '\{print $2\}')\`` :
+``cmds=$(journalctl _COMM=sudo | grep COMMAND | wc -l)\`` : va chercher et compte le nombre de commandes sudo dans le journal en supprimant toutes les infos superflues (messages et avertissements).
+``
+wall "	#Architecture: $arc\
+	#CPU physical: $pcpu\
+	#vCPU: $vcpu\
+	#Memory Usage: $uram/$\{fram\}MB ($pram%)\
+	#Disk Usage: $udisk/$\{fdisk\}Gb ($pdisk%)\
+	#CPU load: $cpul\
+	#Last boot: $lb\
+	#LVM use: $lvmu\
+	#Connections TCP: $ctcp ESTABLISHED\
+	#User log: $ulog\
+	#Network: IP $ip ($mac)\
+	#Sudo: $cmds cmd"\
+}
+`` 
+wall permet de faire afficher le message sur tous les terminaux connectes a la machine. La suite est de la mise en page.
 ``cmd1=$(free --mega -t | grep Total | awk '{ print $3 }')`` : va chercher l'espace mémoire total en megabytes de la colonne 3 (utilisé) de la ligne contenant "Total".
 
 ``cmd2=$(free --mega -t | grep Total | awk '{ print $2 }')`` idem mais colonne 2 (total).
@@ -222,8 +260,8 @@ then
 ``cmd=$(who | wc -l)`` : va chercher et compte les utilisateurs actuellement connectés.
 
 ```
-cmd1=$(ip addr | grep enp | grep inet | awk '{print $2}' | cut -d / -f1)
-cmd2=$(ip addr | grep ether | awk '{print $2}')
+ip=$(ut -d / -f1)
+mac=$(ip addr | grep ether | awk '{print $2}')
 ```
 : va chercher l'adresse IP (mot-clé "enp" et "inet", colonne 2, jusqu'au délimitateur /, 1er bloc) et MAC (mot-clé "ether", colonne 2).
 
