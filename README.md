@@ -208,10 +208,14 @@ PUIS
 
 ``lvmu=$(if [ $(lsblk | grep "lvm" | wc -l) -eq 0 ]; then echo no; else echo yes; fi)\`` : va chercher les infos sur les partitions, les lignes contenant "lvm" et les compte, si le resultat est 0 (= LVM n'est pas active), ecrit non; sinon ecrit oui; fin de la condition.
 
-``ctcp=$(ss -Ht state established | wc -l)\`` : 
+``ctcp=$(ss -Ht state established | wc -l)\`` : va chercher dans les infos sur le ssh les connexions en etat "etablies" et compte les lignes.
+
 ``ulog=$(users | wc -w)\`` : va chercher les utilisateurs actuellement connectés et compte le nombre de mots (noms).
-``ip=$(hostname -I)\`` : va chercher l'adresse IP.
-``mac=$(ip link show | grep "ether" | awk '\{print $2\}')\`` :
+
+``ip=$(hostname -I)\`` : va chercher l'adresse IP dans les informations sur le host.
+
+``mac=$(ip link show | grep "ether" | awk '\{print $2\}')\`` : va chercher les infos sur l'adresse IP, la ligne contenant "ether" et imprime la colonne 2, soit l'adresse MAC.
+
 ``cmds=$(journalctl _COMM=sudo | grep COMMAND | wc -l)\`` : va chercher et compte le nombre de commandes sudo dans le journal en supprimant toutes les infos superflues (messages et avertissements).
 ``
 wall "	#Architecture: $arc\
@@ -229,40 +233,3 @@ wall "	#Architecture: $arc\
 }
 `` 
 wall permet de faire afficher le message sur tous les terminaux connectes a la machine. La suite est de la mise en page.
-``cmd1=$(free --mega -t | grep Total | awk '{ print $3 }')`` : va chercher l'espace mémoire total en megabytes de la colonne 3 (utilisé) de la ligne contenant "Total".
-
-``cmd2=$(free --mega -t | grep Total | awk '{ print $2 }')`` idem mais colonne 2 (total).
-
-``cmd3=$(free --mega -t | grep Total | awk '{ print $3/$2 * 100 }')`` : calcule le pourcentage utilisé.
-
-
-``cmd3=$(df --block-size=G --total | grep total | awk '{ print $5 }')`` : va chercher l'espace disponible sur le disque (colonne 5 = pourcentage).
-
-```
-cmd1=$(df --block-size=G --total | grep total | awk '{ print $3 }')
-cmd2=$(df --block-size=G --total | grep total | awk '{ print $2 }')
-cmd=$(mpstat | grep all | awk '{print $3+$5}')
-```
-: va chercher la charge des CPU? 
-
-``cmd=$(who -b | awk '{ print $3 " " $4 }')`` : va chercher les infos sur les utilisateurs actuellement connectés en précisant l'heure du dernier system boot (?)
-
-```
-if [ $cmd -gt 0 ]
-then
-```
-: permet d'afficher oui ou non selon si LVM est utilisé ou pas (?)
-
-``cmd=$(cat /etc/fstab | grep /dev/mapper | wc -l)`` : va chercher l'utilisation du LVM.
-
-``cmd=$(echo "$(ss -t state established | wc -l) - 1" | bc)`` : va chercher et compte toutes les lignes où une connexion TCP a été établie (?)
-
-``cmd=$(who | wc -l)`` : va chercher et compte les utilisateurs actuellement connectés.
-
-```
-ip=$(ut -d / -f1)
-mac=$(ip addr | grep ether | awk '{print $2}')
-```
-: va chercher l'adresse IP (mot-clé "enp" et "inet", colonne 2, jusqu'au délimitateur /, 1er bloc) et MAC (mot-clé "ether", colonne 2).
-
-``cmd=$(journalctl -q | grep COMMAND | wc -l)`` : va chercher et compte le nombre de commandes sudo dans le journal en supprimant toutes les infos superflues (messages et avertissements).
