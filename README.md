@@ -184,9 +184,12 @@ PUIS
 ## bash
 **Le texte à afficher appelle les variables ``"Info : $var_name"`` qui elles appellent des lignes de commande ``var_name=$(command1 -flag | command2)``.**
 
+Certaines données qu'on doit afficher pour l'exercice sont accessibles facilement à l'aide d'une commande directe (comme l'adresse IP par ex, qui se récupère d'un flag après la commande ``hostname``). D'autres sont récupérables dans des fichiers qu'il faut un peu fouiller (ex.: le pourcentage de CPU utilisé qui s'obtient en additionnant l'utilisation du système et celle de l'utilisateur), voire doivent se calculer sur la base de données dispersées dans des fichiers (ex.: le pourcentage d'espace disque utilisé). Je vous recommande de faire vos propres tests et fouilles pour être mieux armé-e pendant l'évaluation.
+
 La commande ``awk`` sert à accéder à une variable du fichier ouvert, on l'utilise à chaque fois qu'on veut imprimer une donnée stockée telle quelle dans une colonne par ex.
 
 La commande ``wc`` sert à compter le nombre d'éléments (lignes avec le flag ``-l``, mots avec le flag ``-w``) du fichier ouvert; on peut préciser des lignes avec la commande ``grep``.
+
 
 
 ``#! /bin/bash`` : déclare le fichier comme un bash.
