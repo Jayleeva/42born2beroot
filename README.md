@@ -184,7 +184,9 @@ PUIS
 ## bash
 ``#! /bin/bash`` : déclare le fichier comme un bash.
 
-``arc=$(uname -a)`` : va chercher tous les noms unix : architecture, machine, ..., ..., OS, ...,...
+Le texte à afficher appelle les variables ``"Info : $var_name"`` qui elles appellent des lignes de commande ``var_name=$(command1 -flag | command2)``.
+
+``arc=$(uname -a)`` : va chercher tous les noms unix : architecture, machine, ..., ..., OS, ..., ...
 
 ``pcpu=$(grep "physical id" /proc/cpuinfo | uniq | wc -l)`` : va chercher et compte toutes les lignes uniques qui contiennent "physical id" dans le fichier cpuinfo. Permet de compter le nombre de CPU physiques.
 
