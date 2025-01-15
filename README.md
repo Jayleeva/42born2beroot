@@ -182,9 +182,9 @@ PUIS
 ``nano /etc/hosts`` changer hostname.
 
 ## bash
-``#! /bin/bash`` : déclare le fichier comme un bash.
+**Le texte à afficher appelle les variables ``"Info : $var_name"`` qui elles appellent des lignes de commande ``var_name=$(command1 -flag | command2)``.**
 
-Le texte à afficher appelle les variables ``"Info : $var_name"`` qui elles appellent des lignes de commande ``var_name=$(command1 -flag | command2)``.
+``#! /bin/bash`` : déclare le fichier comme un bash.
 
 ``arc=$(uname -a)`` : va chercher tous les noms unix : architecture, machine, ..., ..., OS, ..., ...
 
