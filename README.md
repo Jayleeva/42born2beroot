@@ -196,13 +196,13 @@ PUIS
 
 ``uram=$(free -m | awk '$1 == "Mem:" \{print $3\}')\`` : va chercher dans les informations sur la mémoire, si la colonne 1 s'appelle "Mem:", imprime le contenu de la colonne 3, soit l'espace ram utilisé.
 
-``pram=$(free | awk '$1 == "Mem:" \{printf("%.2f"), $3/$2*100\}')\`` : va chercher dans les informations sur la mémoire, si la colonne 1 s'appelle "Mem:", imprime en format float avec 2 décimales le résultat du calcul du pourcentage [utilisé sur libre (?)].
+``pram=$(free | awk '$1 == "Mem:" \{printf("%.2f"), $3/$2*100\}')\`` : va chercher dans les informations sur la mémoire, si la colonne 1 s'appelle "Mem:", imprime en format float avec 2 décimales le résultat du calcul du pourcentage [part utilisée sur part libre (?)].
 
 ``fdisk=$(df -BG | grep '^/dev/' | grep -v '/boot$' | awk '\{ft += $2\} END \{print ft\}')\`` : va chercher dans les informations sur le disque (affichées en blocs avec l'unité giga), les lignes qui commencent par /dev et qui ne contiennent pas /boot$, cumule toutes les colonnes 2, et à la fin de ce calcul, en imprime le resultat, soit l'espace disque libre. Il n'y a en réalite qu'une seule colonne 2, mais le calcul est laissé car il permet d'éviter des erreurs d'affichage.
 
 ``udisk=$(df -BM | grep '^/dev/' | grep -v '/boot$' | awk '\{ut += $3\} END \{print ut\}')\`` : va chercher dans les informations sur le disque (affichées en blocs avec l'unité mega), les lignes qui commencent par /dev et qui ne contiennent pas /boot$, cumule toutes les colonnes 3, et à la fin de ce calcul, en imprime le resultat, soit l'espace disque utilisé. Il n'y a en réalite qu'une seule colonne 3, mais le calcul est laissé car il permet d'éviter des erreurs d'affichage.
 
-``pdisk=$(df -BM | grep '^/dev/' | grep -v '/boot$' | awk '\{ut += $3\} \{ft+= $2\} END \{printf("%d"), ut/ft*100\}')\`` : va chercher dans les informations sur le disque (affichées en blocs avec l'unité mega), les lignes qui commencent par /dev et qui ne contiennent pas /boot$, cumule toutes les colonnes 3 et toutes les colonnes 2 (séparement) et calcule le pourcentage [utilisé sur libre (?)]. 
+``pdisk=$(df -BM | grep '^/dev/' | grep -v '/boot$' | awk '\{ut += $3\} \{ft+= $2\} END \{printf("%d"), ut/ft*100\}')\`` : va chercher dans les informations sur le disque (affichées en blocs avec l'unité mega), les lignes qui commencent par /dev et qui ne contiennent pas /boot$, cumule toutes les colonnes 3 et toutes les colonnes 2 (séparement) et calcule le pourcentage [part utilisée sur part libre (?)]. 
 
 ``cpul=$(top -bn1 | grep '^%Cpu' | awk '\{printf("%.1f%%"), $1 + $3\}')\`` : va chercher dans le gestionnaire de tâches la ligne qui commence par %Cpu et imprime en format float avec 1 décimale le resultat de l'addition de la colonne 1 et 3 (système et utilisateur).
 
