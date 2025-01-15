@@ -182,7 +182,7 @@ PUIS
 ``nano /etc/hosts`` changer hostname.
 
 ## bash
-Le texte à afficher appelle les variables ``"Info : $var_name"`` qui elles appellent des lignes de commande ``var_name=$(command1 -flag | command2)``.
+Le texte à afficher appelle les variables ``"Info: $var_name"`` qui elles appellent des lignes de commande ``var_name=$(command1 -flag | command2)``.
 
 Certaines données qu'on doit afficher pour l'exercice sont accessibles facilement à l'aide d'une commande directe (comme l'adresse IP par ex, qui se récupère d'un flag après la commande ``hostname``). D'autres sont récupérables dans des fichiers qu'il faut un peu fouiller (ex.: le pourcentage de CPU utilisé qui s'obtient en additionnant l'utilisation du système et celle de l'utilisateur), voire doivent se calculer sur la base de données dispersées dans des fichiers (ex.: le pourcentage d'espace disque utilisé). Je vous recommande de faire vos propres tests et fouilles pour être mieux armé-e pendant l'évaluation.
 
