@@ -223,7 +223,7 @@ La commande ``wc`` sert à compter le nombre d'éléments (lignes avec le flag `
 
 ``ulog=$(users | wc -w)\`` : va chercher les utilisateurs actuellement connectés et compte le nombre de mots (noms).
 
-``ip=$(hostname -I)\`` : va chercher l'adresse IP dans les informations sur le host.
+``ip=$(hostname -I)\`` : va chercher l'adresse IP dans les informations sur le hostname.
 
 ``mac=$(ip link show | grep "ether" | awk '\{print $2\}')\`` : va chercher les infos sur l'adresse IP, la ligne contenant "ether" et imprime la colonne 2, soit l'adresse MAC.
 
