@@ -243,4 +243,4 @@ wall "	#Architecture: $arc\
 	#Network: IP $ip ($mac)\
 	#Sudo: $cmds cmd"\
 ````
-wall permet de faire afficher le message sur tous les terminaux connectés à la machine. La suite est de la mise en page.
+``wall`` permet de faire afficher le message sur tous les terminaux connectés à la machine. La suite est de la mise en page.
