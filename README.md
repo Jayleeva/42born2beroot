@@ -172,7 +172,7 @@ cron (chrono tab -> "table de planification") est un programme qui permet aux ut
 ouvrir le fichier avec ``sudo crontab -e``
 ajouter:
 ``*/10 * * * * /usr/local/bin/monitoring.sh``
-Pour exécuter le bash toutes les 10 minutes.
+Pour exécuter le bash toutes les 10 minutes (si le bash est appelé différemment ou enregistré ailleurs, adapter le path).
 
 ## hostname
 changer hostname avec commande ``sudo hostnamectl set-hostname your_username42``
