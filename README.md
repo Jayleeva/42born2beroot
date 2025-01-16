@@ -201,11 +201,11 @@ La commande ``wc`` sert à compter le nombre d'éléments (lignes avec le flag `
 
 ``vcpu=$(grep "^processor" /proc/cpuinfo | wc -l)`` : va chercher et compte toutes les lignes qui commencent par "processor" dans le fichier cpuinfo. Permet de compter le nombre de vCPU.
 
-``fram=$(free -m | awk '$1 == "Mem:" \{print $2\}')\`` : va chercher dans les informations sur la mémoire, la ligne où la colonne 1 s'appelle "Mem:", imprime le contenu de la colonne 2, soit l'espace ram encore libre.
+``fram=$(free -m | awk '$1 == "Mem:" \{print $2\}')\`` : va chercher dans les informations sur la RAM, la ligne où la colonne 1 s'appelle "Mem:", imprime le contenu de la colonne 2, soit l'espace ram encore libre.
 
-``uram=$(free -m | awk '$1 == "Mem:" \{print $3\}')\`` : va chercher dans les informations sur la mémoire, la ligne où la colonne 1 s'appelle "Mem:", imprime le contenu de la colonne 3, soit l'espace ram utilisé.
+``uram=$(free -m | awk '$1 == "Mem:" \{print $3\}')\`` : va chercher dans les informations sur la RAM, la ligne où la colonne 1 s'appelle "Mem:", imprime le contenu de la colonne 3, soit l'espace ram utilisé.
 
-``pram=$(free | awk '$1 == "Mem:" \{printf("%.2f"), $3/$2*100\}')\`` : va chercher dans les informations sur la mémoire, la ligne où la colonne 1 s'appelle "Mem:", imprime en format float avec 2 décimales le résultat du calcul du pourcentage [part utilisée sur part libre (?)].
+``pram=$(free | awk '$1 == "Mem:" \{printf("%.2f"), $3/$2*100\}')\`` : va chercher dans les informations sur la RAM, la ligne où la colonne 1 s'appelle "Mem:", imprime en format float avec 2 décimales le résultat du calcul du pourcentage [part utilisée sur part libre (?)].
 
 ``fdisk=$(df -BG | grep '^/dev/' | grep -v '/boot$' | awk '\{ft += $2\} END \{print ft\}')\`` : va chercher dans les informations sur le disque (affichées en blocs avec l'unité giga), les lignes qui commencent par /dev et qui ne contiennent pas /boot$, cumule toutes les colonnes 2, et à la fin de ce calcul, en imprime le resultat, soit l'espace disque libre. Il n'y a en réalite qu'une seule colonne 2, mais le calcul est laissé car il permet d'éviter des erreurs d'affichage.
 
