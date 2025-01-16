@@ -227,7 +227,7 @@ La commande ``wc`` sert à compter le nombre d'éléments (lignes avec le flag `
 
 ``mac=$(ip link show | grep "ether" | awk '\{print $2\}')\`` : va chercher les infos sur l'adresse IP, la ligne contenant "ether" et imprime la colonne 2, soit l'adresse MAC.
 
-``cmds=$(journalctl _COMM=sudo | grep COMMAND | wc -l)\`` : va chercher et compte le nombre de commandes sudo dans le journal en supprimant toutes les infos superflues (messages et avertissements).
+``cmds=$(journalctl _COMM=sudo | grep COMMAND | wc -l)\`` : va chercher et compte le nombre de commandes sudo dans le journal en ignorant les infos superflues (messages et avertissements).
 
 ````
 wall "	#Architecture: $arc\
